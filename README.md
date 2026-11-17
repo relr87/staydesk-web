@@ -3,7 +3,8 @@
 Página de presentación de **StayDesk**, una app de operaciones para hoteles de Florida: recepción, housekeeping,
 ingeniería y chat con huéspedes ven el mismo estado de cada habitación, en inglés y en español.
 
-- **En vivo:** https://staydeskhotel.com
+- **En vivo (Vercel):** https://staydesk-web-seven.vercel.app
+- **Dominio propio:** https://staydeskhotel.com (todavía publicado en Netlify)
 - **Track del Claude Build Challenge:** Hospitality · Nivel 1 (Launch)
 
 ## Qué hay aquí
