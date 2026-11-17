@@ -3,8 +3,8 @@
 Página de presentación de **StayDesk**, una app de operaciones para hoteles de Florida: recepción, housekeeping,
 ingeniería y chat con huéspedes ven el mismo estado de cada habitación, en inglés y en español.
 
-- **En vivo (Vercel):** https://staydesk-web-seven.vercel.app
-- **Dominio propio:** https://staydeskhotel.com (todavía publicado en Netlify)
+- **En vivo:** https://staydeskhotel.com (dominio propio, servido por Vercel; www redirige aquí)
+- **Link de Vercel:** https://staydesk-web-seven.vercel.app
 - **Track del Claude Build Challenge:** Hospitality · Nivel 1 (Launch)
 
 ## Lighthouse
@@ -46,6 +46,8 @@ python3 -m http.server 8000
 ```
 
 ## Publicar
+
+El dominio staydeskhotel.com apunta a Vercel desde el DNS de Netlify (registro A `@` y CNAME `www`). Los registros del correo (MX, SPF y DKIM de Zoho) no se tocaron.
 
 El repositorio está conectado a Vercel: cada `git push` a `main` publica la página sola en un minuto más o menos.
 
