@@ -7,6 +7,16 @@ ingeniería y chat con huéspedes ven el mismo estado de cada habitación, en in
 - **Dominio propio:** https://staydeskhotel.com (todavía publicado en Netlify)
 - **Track del Claude Build Challenge:** Hospitality · Nivel 1 (Launch)
 
+## Lighthouse
+
+Medido en el link en vivo de Vercel, ventana Incógnito, dispositivo Mobile (Chrome DevTools), 16 de noviembre de 2026:
+
+| Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|
+| 94 | 95 | 100 | 100 |
+
+Captura: [`docs/lighthouse-mobile.png`](docs/lighthouse-mobile.png). La primera medición dio 82 en Accesibilidad (contraste de etiquetas y roles ARIA); se corrigió en el commit «Accesibilidad: contraste de etiquetas y roles ARIA de los pasos».
+
 ## Qué hay aquí
 
 | Archivo | Qué es |
