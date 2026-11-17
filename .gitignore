@@ -1,0 +1,11 @@
+# sistema y editores
+.DS_Store
+Thumbs.db
+.vscode/
+# dependencias y secretos (por si el proyecto crece)
+node_modules/
+.env
+.env*
+!.env.example
+# Vercel
+.vercel
