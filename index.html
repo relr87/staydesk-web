@@ -104,9 +104,10 @@ p{margin:0}
 .vid .vh3{margin-top:56px;font:700 28px var(--display);letter-spacing:-.3px}
 /* ===== v2: How it works, animated ===== */
 .steps{position:relative}
-.steps .rail{position:absolute;left:45px;top:46px;bottom:46px;width:4px;border-radius:4px;background:var(--line);z-index:0}
-.steps .rail i{position:absolute;left:0;top:0;width:100%;border-radius:4px;background:linear-gradient(180deg,#F6C76E,var(--bell));box-shadow:0 0 14px rgba(233,169,58,.7);transition:height .7s cubic-bezier(.65,0,.35,1)}
-.steps .rail b{position:absolute;left:-4px;width:12px;height:12px;border-radius:50%;background:#FFE7B4;box-shadow:0 0 16px 4px rgba(233,169,58,.9);transition:top .7s cubic-bezier(.65,0,.35,1)}
+#how .wrap>div:first-child{position:relative}
+.rail{position:absolute;left:45px;top:0;height:0;width:4px;border-radius:4px;background:var(--line);z-index:0}
+.rail i{position:absolute;left:0;top:0;width:100%;border-radius:4px;background:linear-gradient(180deg,#F6C76E,var(--bell));box-shadow:0 0 14px rgba(233,169,58,.7);transition:height .7s cubic-bezier(.65,0,.35,1)}
+.rail b{position:absolute;left:-4px;width:12px;height:12px;border-radius:50%;background:#FFE7B4;box-shadow:0 0 16px 4px rgba(233,169,58,.9);transition:top .7s cubic-bezier(.65,0,.35,1)}
 .steps li{position:relative;z-index:1}
 .steps button{position:relative;overflow:hidden;transition:box-shadow .3s ease,background-color .3s ease,transform .45s cubic-bezier(.2,.8,.2,1)}
 .steps button[aria-selected="true"]{transform:translateX(8px);box-shadow:inset 0 0 0 2.5px var(--bell),0 16px 36px rgba(233,169,58,.25)}
@@ -152,7 +153,7 @@ p{margin:0}
 
 section{padding:104px 0}
 .kicker{font-weight:600;color:var(--bell-ink);font-size:17px;margin-bottom:14px}
-.dark .kicker{color:var(--bell)}
+.dark .kicker,.pilot .box .kicker{color:var(--bell)}
 .sub{font-size:20px;color:var(--muted);max-width:56ch;margin-top:18px}
 .dark{background:var(--night);color:#F3F6FA}
 .dark .sub{color:#B9C7DA}
@@ -322,7 +323,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .scr .tag{position:absolute;left:18px;top:18px;box-shadow:0 4px 12px rgba(0,0,0,.3);background:var(--bell);color:#1D1404;font:700 14px var(--body);padding:4px 12px;border-radius:999px}
 .notes{position:absolute;left:0;right:0;bottom:44px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap;z-index:2}
 .note3{background:#fff;color:var(--ink);border-radius:12px;padding:9px 14px;font:600 15px var(--body);box-shadow:0 10px 24px rgba(0,0,0,.3);display:flex;gap:8px;align-items:center;opacity:0;transform:translateY(14px) scale(.95);animation:nin .5s cubic-bezier(.2,1.4,.4,1) forwards}
-.note3 b{color:var(--ready);font-size:17px}
+.note3 b{color:#137267;font-size:17px}
 @keyframes nin{to{opacity:1;transform:none}}
 .tnav{position:absolute;left:50%;bottom:0;transform:translateX(-50%);display:flex;align-items:center;gap:14px;color:#9FB2CB;font-size:15px;font-variant-numeric:tabular-nums}
 .rb{width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.1);color:#fff;font-size:24px;line-height:1;cursor:pointer}
@@ -501,9 +502,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <button class="btn btn-dark" id="merge" data-i="merge">Put them in one place</button>
     </div>
     <div class="pile" id="pile">
-      <div class="chip" style="left:2%;top:4%;--tx:180px;--ty:150px"><span class="dot" style="background:#6B7A90">PMS</span><span><span data-i="c1">Reservation system</span><small data-i="c1s">Only the desk can see it</small></span></div>
-      <div class="chip" style="right:0;top:16%;--tx:-160px;--ty:110px"><span class="dot" style="background:#25A35A">💬</span><span><span data-i="c2">Housekeeping chat</span><small data-i="c2s">“Who has 214??”</small></span></div>
-      <div class="chip" style="left:8%;top:42%;--tx:150px;--ty:20px"><span class="dot" style="background:#B58A3A">📋</span><span><span data-i="c3">Printed room list</span><small data-i="c3s">Old by 6:30 AM</small></span></div>
+      <div class="chip" style="left:2%;top:4%;--tx:180px;--ty:150px"><span class="dot" style="background:#56657A">PMS</span><span><span data-i="c1">Reservation system</span><small data-i="c1s">Only the desk can see it</small></span></div>
+      <div class="chip" style="right:0;top:16%;--tx:-160px;--ty:110px"><span class="dot" style="background:#1B7F45">💬</span><span><span data-i="c2">Housekeeping chat</span><small data-i="c2s">“Who has 214??”</small></span></div>
+      <div class="chip" style="left:8%;top:42%;--tx:150px;--ty:20px"><span class="dot" style="background:#8A6420">📋</span><span><span data-i="c3">Printed room list</span><small data-i="c3s">Old by 6:30 AM</small></span></div>
       <div class="chip" style="right:6%;top:58%;--tx:-140px;--ty:-40px"><span class="dot" style="background:#9A5B2E">🔧</span><span><span data-i="c4">Repair notebook</span><small data-i="c4s">“A/C 420, again”</small></span></div>
       <div class="chip" style="left:14%;top:78%;--tx:120px;--ty:-150px"><span class="dot" style="background:#C2332B">📞</span><span><span data-i="c5">Ringing phone</span><small data-i="c5s">3 lines on hold</small></span></div>
       <img class="hub" src="img/logo.png" alt="StayDesk">
@@ -518,13 +519,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
       <h2 data-i="h2b">From checkout to ready, on everyone’s phone.</h2>
       <p class="sub" data-i="p2b">Follow room 214 through one morning. Tap a step to see what each person sees.</p>
       <ol class="steps" id="steps" role="tablist" aria-label="Steps">
-        <span class="rail" aria-hidden="true"><i></i><b></b></span>
-        <li><button role="tab" aria-selected="true" data-step="0"><span><h3 data-i="st1">Guest checks out</h3><p data-i="st1p">The desk checks out room 214. It turns dirty for housekeeping at that moment, with no phone call.</p></span></button></li>
-        <li><button role="tab" aria-selected="false" data-step="1"><span><h3 data-i="st2">Rooms assign themselves</h3><p data-i="st2p">StayDesk splits the day’s rooms fairly by bed type. Nora sees 214 at the top of her list.</p></span></button></li>
-        <li><button role="tab" aria-selected="false" data-step="2"><span><h3 data-i="st3">Cleaning, on the clock</h3><p data-i="st3p">Nora starts the timer. A dripping shower becomes a repair order for engineering in one tap.</p></span></button></li>
-        <li><button role="tab" aria-selected="false" data-step="3"><span><h3 data-i="st4">Supervisor inspects</h3><p data-i="st4p">The supervisor approves 214 from her phone. Nothing goes on sale until it passes.</p></span></button></li>
-        <li><button role="tab" aria-selected="false" data-step="4"><span><h3 data-i="st5">Ready to sell</h3><p data-i="st5p">The desk sees 214 ready and checks in the guest who was waiting in the lobby.</p></span></button></li>
-      </ol>
+        <li role="presentation"><button role="tab" aria-selected="true" data-step="0"><span><h3 data-i="st1">Guest checks out</h3><p data-i="st1p">The desk checks out room 214. It turns dirty for housekeeping at that moment, with no phone call.</p></span></button></li>
+        <li role="presentation"><button role="tab" aria-selected="false" data-step="1"><span><h3 data-i="st2">Rooms assign themselves</h3><p data-i="st2p">StayDesk splits the day’s rooms fairly by bed type. Nora sees 214 at the top of her list.</p></span></button></li>
+        <li role="presentation"><button role="tab" aria-selected="false" data-step="2"><span><h3 data-i="st3">Cleaning, on the clock</h3><p data-i="st3p">Nora starts the timer. A dripping shower becomes a repair order for engineering in one tap.</p></span></button></li>
+        <li role="presentation"><button role="tab" aria-selected="false" data-step="3"><span><h3 data-i="st4">Supervisor inspects</h3><p data-i="st4p">The supervisor approves 214 from her phone. Nothing goes on sale until it passes.</p></span></button></li>
+        <li role="presentation"><button role="tab" aria-selected="false" data-step="4"><span><h3 data-i="st5">Ready to sell</h3><p data-i="st5p">The desk sees 214 ready and checks in the guest who was waiting in the lobby.</p></span></button></li>
+      </ol><span class="rail" aria-hidden="true"><i></i><b></b></span>
     </div>
     <div class="phone" aria-live="polite">
       <div class="screen" id="screen"><div class="p-notif" id="p-notif" aria-hidden="true"><i></i><span></span></div><div class="conf" id="p-conf" aria-hidden="true"></div>
@@ -566,7 +566,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
           <div class="said" id="said">“La 214 tiene la ducha goteando.”</div>
           <div class="task" id="task">
             <strong id="taskT">Room 214 · Shower leaking</strong>
-            <div class="row"><span class="pill" style="background:var(--dirty)" data-i="eng">Engineering</span><span class="pill" style="background:var(--muted)" data-i="from">From Nora · voice</span></div>
+            <div class="row"><span class="pill" style="background:#B0451F" data-i="eng">Engineering</span><span class="pill" style="background:var(--muted)" data-i="from">From Nora · voice</span></div>
           </div>
         </div>
         <button class="btn btn-gold" id="playVoice" data-i="play">Play the demo</button>
@@ -763,6 +763,7 @@ const P={
 const col={dirty:'var(--dirty)',cleaning:'var(--cleaning)',inspect:'var(--inspect)',ready:'var(--ready)',occupied:'#C99A3B'};
 const X={en:{n0:'Housekeeping notified · 214 is dirty',n1:'214 moved to the top of Nora’s list',n2:'Repair order sent to engineering',n3:'214 approved · ready to sell',n4:'Ms. Ortega checked in · room 214',occ:'Occupied',chk:['Bed made','Bathroom clean','Amenities restocked'],ok:'APPROVED',tm:'Cleaning time'},
           es:{n0:'Housekeeping avisado · la 214 está sucia',n1:'La 214 subió al primer lugar de Nora',n2:'Orden de reparación enviada a mantenimiento',n3:'214 aprobada · lista para vender',n4:'Sra. Ortega registrada · habitación 214',occ:'Ocupada',chk:['Cama tendida','Baño limpio','Amenidades repuestas'],ok:'APROBADA',tm:'Tiempo de limpieza'}};
+const PC={dirty:'#B0451F',cleaning:'#2364A8',inspect:'#7646B5',ready:'#137267',occupied:'#7F5E10'};
 const GLOW=['var(--dirty)','var(--cleaning)','var(--cleaning)','var(--inspect)','var(--ready)'];
 let cur=0,sdTm=[],sdTick=null,sdT0=performance.now(),sdPause=false,sdSeen=false;
 const STEP_MS=6000;
@@ -770,9 +771,10 @@ function sdLater(ms,f){sdTm.push(setTimeout(f,ms))}
 function sdClear(){sdTm.forEach(clearTimeout);sdTm=[];if(sdTick){clearInterval(sdTick);sdTick=null}}
 function sdNotif(txt,c,icon){const n=$('#p-notif');n.querySelector('i').style.background=c;n.querySelector('i').textContent=icon;n.querySelector('span').textContent=txt;n.classList.remove('on');void n.offsetWidth;n.classList.add('on');sdLater(2600,()=>n.classList.remove('on'))}
 function sdConf(){const h=$('#p-conf');h.innerHTML='';const cs=['#E9A93A','#1F9E92','#3A86D4','#D9653B','#9B6BD6'];for(let k=0;k<36;k++){const i=document.createElement('i');i.style.left=(Math.random()*100)+'%';i.style.background=cs[k%5];i.style.animationDelay=(Math.random()*.5)+'s';i.style.animationDuration=(1.4+Math.random()*1)+'s';h.appendChild(i)}sdLater(3000,()=>h.innerHTML='')}
-function sdRail(i){const btns=[...document.querySelectorAll('#steps button')],ol=$('#steps'),r=ol.querySelector('.rail'),b=btns[i];if(!b)return;
-  const top0=r.offsetTop,bc=b.offsetTop+b.closest('li').offsetTop+b.offsetHeight/2;const y=Math.max(0,bc-top0);r.querySelector('i').style.height=y+'px';r.querySelector('b').style.top=(y-6)+'px'}
-function sdCard(c,extra=''){return `<div class="card"><div class="row"><b>${c[0]}</b><span class="pill" style="background:${col[c[2]]}">${c[3]}</span></div><div style="color:var(--muted)">${c[1]}</div>${extra}</div>`}
+function sdRail(i){const btns=[...document.querySelectorAll('#steps button')],ol=$('#steps'),r=$('#how .rail'),b=btns[i];if(!b)return;
+  r.style.top=(ol.offsetTop+46)+'px';r.style.height=Math.max(0,ol.offsetHeight-92)+'px';
+  const top0=46,bc=b.offsetTop+b.closest('li').offsetTop+b.offsetHeight/2;const y=Math.max(0,bc-top0);r.querySelector('i').style.height=y+'px';r.querySelector('b').style.top=(y-6)+'px'}
+function sdCard(c,extra=''){return `<div class="card"><div class="row"><b>${c[0]}</b><span class="pill" style="background:${PC[c[2]]}">${c[3]}</span></div><div style="color:var(--muted)">${c[1]}</div>${extra}</div>`}
 function renderStep(i,instant){cur=i;sdClear();sdT0=performance.now();
   document.querySelectorAll('#steps button').forEach(b=>{b.setAttribute('aria-selected',+b.dataset.step===i);b.style.setProperty('--p',0)});
   sdRail(i);
@@ -787,14 +789,14 @@ function renderStep(i,instant){cur=i;sdClear();sdT0=performance.now();
     sc.classList.remove('swap');
     const cards=[...pb.querySelectorAll('.card')];
     cards.forEach((c,k)=>{if(i===2&&k===1)return;sdLater(80+k*160,()=>c.classList.add('in'))});
-    if(i===0){sdLater(900,()=>{const p=cards[0].querySelector('.pill');p.style.background=col.dirty;p.textContent=d.cards[0][3];p.classList.add('pop');cards[0].classList.add('hot');cards[0].style.setProperty('--hc',col.dirty)});sdLater(1500,()=>sdNotif(x.n0,col.cleaning,'✓'))}
+    if(i===0){sdLater(900,()=>{const p=cards[0].querySelector('.pill');p.style.background=PC.dirty;p.textContent=d.cards[0][3];p.classList.add('pop');cards[0].classList.add('hot');cards[0].style.setProperty('--hc',col.dirty)});sdLater(1500,()=>sdNotif(x.n0,PC.cleaning,'✓'))}
     if(i===1){const last=cards[2];sdLater(1000,()=>{last.style.transition='transform .7s cubic-bezier(.65,0,.35,1)';const h=last.offsetTop-cards[0].offsetTop;last.style.transform=`translateY(${-h}px)`;cards[0].style.transform=`translateY(${last.offsetHeight+12}px)`;cards[1].style.transform=`translateY(${last.offsetHeight+12}px)`;[cards[0],cards[1]].forEach(c=>c.style.transition='transform .7s cubic-bezier(.65,0,.35,1)')});
-      sdLater(1800,()=>{last.classList.add('hot');last.style.setProperty('--hc',col.dirty);last.querySelector('.pill').classList.add('pop');sdNotif(x.n1,col.dirty,'1')})}
+      sdLater(1800,()=>{last.classList.add('hot');last.style.setProperty('--hc',col.dirty);last.querySelector('.pill').classList.add('pop');sdNotif(x.n1,PC.dirty,'1')})}
     if(i===2){let sec=18*60+30;sdTick=setInterval(()=>{sec++;const e=$('#p-timer');if(e)e.textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')},1000);
       sdLater(300,()=>{const b=sc.querySelector('.bar i');if(b){b.style.transition='width 5s linear';b.style.width='86%'}});
-      sdLater(1700,()=>{cards[1].classList.add('in');cards[1].classList.add('hot');cards[1].style.setProperty('--hc',col.dirty);sdNotif(x.n2,col.dirty,'!')})}
-    if(i===3){[...pb.querySelectorAll('.chk')].forEach((c,k)=>sdLater(700+k*550,()=>c.classList.add('ok')));sdLater(2500,()=>{pb.querySelector('.stamp').classList.add('on');sdNotif(x.n3,col.ready,'✓')})}
-    if(i===4){cards[0].classList.add('hot');cards[0].style.setProperty('--hc',col.ready);sdLater(900,()=>{sdConf();sdNotif(x.n4,col.bell||'var(--bell)','★')})}
+      sdLater(1700,()=>{cards[1].classList.add('in');cards[1].classList.add('hot');cards[1].style.setProperty('--hc',col.dirty);sdNotif(x.n2,PC.dirty,'!')})}
+    if(i===3){[...pb.querySelectorAll('.chk')].forEach((c,k)=>sdLater(700+k*550,()=>c.classList.add('ok')));sdLater(2500,()=>{pb.querySelector('.stamp').classList.add('on');sdNotif(x.n3,PC.ready,'✓')})}
+    if(i===4){cards[0].classList.add('hot');cards[0].style.setProperty('--hc',col.ready);sdLater(900,()=>{sdConf();sdNotif(x.n4,'#8A5A08','★')})}
   };
   if(instant){paint();return}
   sc.classList.add('swap');sdLater(260,paint)}
