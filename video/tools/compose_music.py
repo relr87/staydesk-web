@@ -1,7 +1,7 @@
 """Original background score for the StayDesk video (no samples, no vocals).
 0-20 s: tense, a clock ticking over a low drone (the frustration scene).
 20 s: the beat drops in as the lines connect to StayDesk; calm, positive loop Am-F-C-G at 96 BPM.
-92.4 s: a whoosh as the logo flies at the camera, then it rings out.
+93.4 s: a whoosh as the logo flies at the camera, then it rings out.
 Usage: python compose_music.py out.wav
 """
 import sys
@@ -9,7 +9,7 @@ import numpy as np
 from scipy.signal import butter, sosfilt
 
 SR = 44100
-DUR = 94.5
+DUR = 95.8
 N = int(SR * DUR)
 t = np.arange(N) / SR
 BPM = 96
@@ -17,7 +17,7 @@ BEAT = 60 / BPM
 BAR = 4 * BEAT
 DROP = 20.0          # Connect scene starts
 OUTRO = 87.8         # Outro scene starts
-FLY = 92.4           # logo flies at the camera
+FLY = 93.4         # logo flies at the camera
 rng = np.random.default_rng(7)
 
 

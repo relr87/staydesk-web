@@ -17,10 +17,10 @@ export const SCENES = [
   { id: "Room", c: Room, d: 207, vo: [["v7", 12]] },
   { id: "Alcohol", c: Alcohol, d: 192, vo: [["v8", 12]] },
   { id: "Install", c: Install, d: 198, vo: [["v9", 12]] },
-  { id: "Outro", c: Outro, d: 200, vo: [["c1", 20]] },
+  { id: "Outro", c: Outro, d: 240, vo: [["c1", 20]] },
 ] as const;
 
-export const TOTAL = SCENES.reduce((s, x) => s + x.d, 0); // 2834 frames, about 94 s
+export const TOTAL = SCENES.reduce((s, x) => s + x.d, 0); // 2874 frames, about 96 s
 
 export const StayDeskVideo: React.FC = () => {
   let at = 0;
