@@ -9,7 +9,7 @@ import numpy as np
 from scipy.signal import butter, sosfilt
 
 SR = 44100
-DUR = 95.8
+DUR = 97.2
 N = int(SR * DUR)
 t = np.arange(N) / SR
 BPM = 96

@@ -9,7 +9,7 @@ import { Alcohol, Dashboard, Housekeeping, Install, Maintenance, Requests, Room 
 /* Each scene, its length and the narration lines it carries ([file, frame inside the scene]) */
 export const SCENES = [
   { id: "Chaos", c: Chaos, d: 600, vo: [["a1", 18], ["a2", 400]] },
-  { id: "Connect", c: Connect, d: 360, vo: [["b1", 15]] },
+  { id: "Connect", c: Connect, d: 360, vo: [["b1", 50]] },
   { id: "Dashboard", c: Dashboard, d: 300, vo: [["v3", 12]] },
   { id: "Housekeeping", c: Housekeeping, d: 342, vo: [["v4", 12]] },
   { id: "Requests", c: Requests, d: 246, vo: [["v5", 12]] },
@@ -17,10 +17,10 @@ export const SCENES = [
   { id: "Room", c: Room, d: 207, vo: [["v7", 12]] },
   { id: "Alcohol", c: Alcohol, d: 192, vo: [["v8", 12]] },
   { id: "Install", c: Install, d: 198, vo: [["v9", 12]] },
-  { id: "Outro", c: Outro, d: 240, vo: [["c1", 20]] },
+  { id: "Outro", c: Outro, d: 280, vo: [["c1", 20]] },
 ] as const;
 
-export const TOTAL = SCENES.reduce((s, x) => s + x.d, 0); // 2874 frames, about 96 s
+export const TOTAL = SCENES.reduce((s, x) => s + x.d, 0); // 2914 frames, about 97 s
 
 export const StayDeskVideo: React.FC = () => {
   let at = 0;
@@ -45,6 +45,13 @@ export const StayDeskVideo: React.FC = () => {
         src={staticFile("music-bed.m4a")}
         volume={(f) => interpolate(f, [0, 20, TOTAL - 60, TOTAL], [0, 0.11, 0.11, 0], { extrapolateRight: "clamp" })}
       />
+      {/* the desk bell rings when the logo first appears, and once more as it flies off at the end */}
+      <Sequence from={600 + 34} layout="none">
+        <Audio src={staticFile("ding.wav")} volume={0.55} />
+      </Sequence>
+      <Sequence from={TOTAL - 280 + 205} layout="none">
+        <Audio src={staticFile("ding.wav")} volume={0.6} />
+      </Sequence>
       {voices.map((v) => (
         <Sequence key={v.file} from={v.from} layout="none">
           <Audio src={staticFile(`vo/${v.file}.wav`)} volume={1} />
