@@ -31,14 +31,14 @@ export const BODY = SCENES.reduce((s, x) => s + x.d, 0); // 2040 frames = 68 s
 export const ENDING = 492; // the original ending, 16.4 s
 export const TOTAL = BODY + ENDING;
 
-/* the original ending, faded in over 15 frames from the navy backdrop */
+/* the original ending's pictures, faded in over 15 frames; its own audio is muted (it carries the old narrator) */
 const Ending: React.FC = () => {
   const frame = useCurrentFrame();
   return (
     <OffthreadVideo
       style={{ opacity: interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" }) }}
       src={staticFile("ending.mp4")}
-      volume={(f) => interpolate(f, [0, 30], [0.18, 1], { extrapolateRight: "clamp" })}
+      muted
     />
   );
 };
@@ -66,18 +66,15 @@ export const StayDeskVideo: React.FC = () => {
           <Ending />
         </Series.Sequence>
       </Series>
-      {/* the original soundtrack, quiet under the voice; it runs straight into the ending's own audio */}
-      <Sequence durationInFrames={BODY} layout="none">
-        <Audio
-          src={staticFile("music.m4a")}
-          volume={(f) => interpolate(f, [0, 20], [0, 0.18], { extrapolateRight: "clamp" })}
-        />
-      </Sequence>
       {voices.map((v) => (
         <Sequence key={v.vo} from={v.from} layout="none">
           <Audio src={staticFile(`vo/${v.vo}.wav`)} volume={1} />
         </Sequence>
       ))}
+      {/* the closing line, in the same voice, where the old narrator said it */}
+      <Sequence from={BODY + 72} layout="none">
+        <Audio src={staticFile("vo/v10.wav")} volume={1} />
+      </Sequence>
     </AbsoluteFill>
   );
 };
