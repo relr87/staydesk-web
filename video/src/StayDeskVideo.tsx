@@ -7,6 +7,7 @@ import {
   Sequence,
   Series,
   staticFile,
+  useCurrentFrame,
 } from "remotion";
 import { Backdrop, Fonts } from "./ui";
 import { Intro } from "./scenes/Intro";
@@ -30,6 +31,18 @@ export const BODY = SCENES.reduce((s, x) => s + x.d, 0); // 2040 frames = 68 s
 export const ENDING = 492; // the original ending, 16.4 s
 export const TOTAL = BODY + ENDING;
 
+/* the original ending, faded in over 15 frames from the navy backdrop */
+const Ending: React.FC = () => {
+  const frame = useCurrentFrame();
+  return (
+    <OffthreadVideo
+      style={{ opacity: interpolate(frame, [0, 15], [0, 1], { extrapolateRight: "clamp" }) }}
+      src={staticFile("ending.mp4")}
+      volume={(f) => interpolate(f, [0, 30], [0.18, 1], { extrapolateRight: "clamp" })}
+    />
+  );
+};
+
 export const StayDeskVideo: React.FC = () => {
   let at = 0;
   const voices = SCENES.map((s) => {
@@ -50,10 +63,7 @@ export const StayDeskVideo: React.FC = () => {
           </Series.Sequence>
         ))}
         <Series.Sequence name="Original ending" durationInFrames={ENDING}>
-          <OffthreadVideo
-            src={staticFile("ending.mp4")}
-            volume={(f) => interpolate(f, [0, 30], [0.18, 1], { extrapolateRight: "clamp" })}
-          />
+          <Ending />
         </Series.Sequence>
       </Series>
       {/* the original soundtrack, quiet under the voice; it runs straight into the ending's own audio */}
