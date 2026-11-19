@@ -40,10 +40,10 @@ export const StayDeskVideo: React.FC = () => {
           </Series.Sequence>
         ))}
       </Series>
-      {/* the original video's music with its narrator taken out, low under the new voice */}
+      {/* an original score made for this video (tools/compose_music.py), low under the voice */}
       <Audio
         src={staticFile("music-bed.m4a")}
-        volume={(f) => interpolate(f, [0, 20, TOTAL - 60, TOTAL], [0, 0.28, 0.28, 0], { extrapolateRight: "clamp" })}
+        volume={(f) => interpolate(f, [0, 20, TOTAL - 60, TOTAL], [0, 0.11, 0.11, 0], { extrapolateRight: "clamp" })}
       />
       {voices.map((v) => (
         <Sequence key={v.file} from={v.from} layout="none">
