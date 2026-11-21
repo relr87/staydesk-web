@@ -121,7 +121,10 @@
   .lang-switch button { all: unset; cursor: pointer; padding: 0 var(--s-4); border-radius: calc(var(--r-btn, 999px) - 2px); font: 500 var(--t-small)/38px var(--font-text); color: var(--muted); min-width: 44px; text-align: center; }
   .lang-switch button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
   .lang-switch button:focus-visible { outline: 2px solid var(--action); outline-offset: 2px; box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--ink); }
-  @media (max-width: 1023px) { .nav__actions .lang-switch { display: none; } }
+  /* the language switch: beside the main button on a desktop, beside the menu button on a tablet or phone */
+  .lang-switch--bar { display: none; }
+  @media (max-width: 1023px) { .lang-switch--bar { display: inline-flex; margin-left: auto; margin-right: var(--s-3); flex: none; } .nav__bar > .nav__toggle { margin-left: 0; } }
+  @media (max-width: 639px) { .lang-switch button { padding: 0 var(--s-3); min-width: 40px; } }
 </style>
 </head>
 <body>
@@ -142,6 +145,10 @@
       <div class="nav__item"><a class="nav__link" href="#pilot" data-es="Precio">Pricing</a></div>
       <div class="nav__item"><a class="nav__link" href="#faq" data-es="Preguntas">Questions</a></div>
     </nav>
+    <div class="lang-switch lang-switch--bar" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="es" aria-pressed="false">ES</button>
+    </div>
     <div class="nav__actions">
       <div class="lang-switch" role="group" aria-label="Language">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
