@@ -1,0 +1,9 @@
+# no se publican en el sitio: el proyecto editable del video, el video y la página anteriores, y documentos internos
+video/
+media/staydesk-v1.mp4
+media/staydesk-v1-poster.jpg
+index-v1.html
+docs/
+README.md
+shots/
+.taste-skill/
