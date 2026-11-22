@@ -40,6 +40,9 @@
   --display-tracking: -0.035em;
   --display-tracking-xl: -0.045em;
 }
+
+/* área táctil mínima de 24 px en los enlaces del pie */
+.footer__col li a, .footer__legal a { display: inline-block; padding-block: 4px; }
 </style>
 <link rel="stylesheet" href="assets/ui/base.css">
 <link rel="stylesheet" href="assets/ui/window/fragment.css">
@@ -496,7 +499,7 @@
           <div class="faq__item"><h3 data-es="¿Tengo que cambiar mi sistema de reservas?">Do I need to replace my hotel’s reservation system?</h3><p data-es="No. StayDesk tiene sus propias reservas y tablero, y también puede funcionar al lado del sistema que ya usa.">No. StayDesk has its own reservations and room board, and it can also run beside the system you already use.</p></div>
           <div class="faq__item"><h3 data-es="¿Qué teléfonos necesita mi equipo?">What phones does my team need?</h3><p data-es="Un teléfono con un navegador al día. Nada que instalar: abren un enlace y entran con su PIN.">A phone with an up-to-date browser. Nothing to install from a store: they open a link and log in with their PIN.</p></div>
           <div class="faq__item"><h3 data-es="¿Qué pasa si se cae el internet?">What happens if the hotel’s internet goes down?</h3><p data-es="La app sigue abriendo y guardando en cada equipo, y se pone al día cuando vuelve la conexión.">The app keeps opening and saving on each device, and catches up when the connection returns.</p></div>
-          <div class="faq__item"><h3 data-es="¿Cómo se protegen los datos de los huéspedes?">How does the app protect guest data?</h3><p data-es="Cada persona ve solo lo que permite su rol y entra con su propio PIN. No se guardan fechas de nacimiento de las identificaciones.">Each person sees only what their role allows and logs in with their own PIN. Birth dates from guest IDs are not stored.</p></div>
+          <div class="faq__item"><h3 data-es="¿Cómo se protegen los datos de los huéspedes?">How does the app protect guest data?</h3><p data-es="Cada persona entra con su propio PIN y ve las pantallas de su puesto. Durante el piloto, los datos del hotel se quedan en los equipos del hotel (y en su propio servidor, si activa la sincronización): StayDesk no guarda una copia. No se guardan fechas de nacimiento de las identificaciones.">Each person logs in with their own PIN and sees the screens for their role. During the pilot, the hotel’s data stays on the hotel’s own devices (and on its own server, if it turns on sync): StayDesk keeps no copy. Birth dates from guest IDs are not stored.</p></div>
         </div>
       </div>
     </div>
@@ -520,7 +523,7 @@
         <div class="span-2 footer__col"><h3 data-es="Producto">Product</h3><ul><li><a href="#board" data-es="Tablero">Room board</a></li><li><a href="#florida" data-es="Florida">Florida</a></li></ul></div>
         <div class="span-2 footer__col"><h3 data-es="Equipos">Teams</h3><ul><li><a href="#teams" data-es="Pantallas">Screens</a></li><li><a href="#next" data-es="En desarrollo">In development</a></li></ul></div>
         <div class="span-2 footer__col"><h3 data-es="Precio">Pricing</h3><ul><li><a href="#pilot" data-es="Piloto">Pilot</a></li><li><a href="#faq" data-es="Preguntas">Questions</a></li></ul></div>
-        <div class="span-2 footer__col"><h3 data-es="Contacto">Contact</h3><ul><li><a href="mailto:info@staydeskhotel.com" data-es="Correo">Email</a></li><li><a href="https://staydesk-hotel.netlify.app" data-es="Demo en vivo">Live demo</a></li><li><a href="delete-account.html" data-es="Borrar cuenta">Delete account</a></li></ul></div>
+        <div class="span-2 footer__col"><h3 data-es="Contacto">Contact</h3><ul><li><a href="mailto:info@staydeskhotel.com" data-es="Correo">Email</a></li><li><a href="https://app.staydeskhotel.com" data-es="Demo en vivo">Live demo</a></li><li><a href="delete-account.html" data-es="Borrar cuenta">Delete account</a></li></ul></div>
       </div>
       <div class="footer__legal">
         <span>&copy; 2026 StayDesk &nbsp; <a href="privacy.html" data-es="Privacidad">Privacy</a></span>

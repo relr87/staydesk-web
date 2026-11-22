@@ -9,7 +9,7 @@ ingeniería y chat con huéspedes ven el mismo estado de cada habitación, en in
 
 ## Lighthouse
 
-Medido en el link en vivo de Vercel, ventana Incógnito, dispositivo Mobile (Chrome DevTools), 16 de noviembre de 2026:
+Medido en el link en vivo de Vercel, ventana Incógnito, dispositivo Mobile (Chrome DevTools), 16 de noviembre de 2026, **antes del rediseño** (Taste Skill). Hay que volver a medir la página actual:
 
 | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|
@@ -23,16 +23,19 @@ Captura: [`docs/lighthouse-mobile.png`](docs/lighthouse-mobile.png). La primera 
 |---|---|
 | `index.html` | Toda la página: HTML, CSS y JavaScript en un solo archivo, sin dependencias ni paso de compilación. |
 | `img/` | Capturas de la app, el logo y `og.jpg` (la imagen que sale al pegar el link en un chat). |
-| `media/` | Los dos videos (presentación de 2 minutos y antes/después), sus portadas y los audios de la demo de voz. |
+| `media/` | El video de presentación (`staydesk.mp4`) y su portada. El video antes/después y los audios de voz siguen en el repo, pero ya no se publican (ver `.vercelignore`). |
 | `vercel.json` | Encabezados de seguridad y de caché para Vercel. |
 
 ### Secciones
 
-1. **Promesa** (hero): "Your whole hotel, in one app", con el botón para pedir el piloto.
-2. **Videos**: la app en dos minutos, y cómo creció del primer prototipo a la versión 25.8.
-3. **Cómo funciona**: la habitación 214 recorre una mañana (salida → limpieza → inspección → lista), con animación.
-4. **Funciones** y las dos demos en desarrollo (voz en español → orden en inglés, y botón de ayuda).
-5. **Preguntas** y **llamado a la acción** con el correo info@staydeskhotel.com.
+1. **Promesa** (hero): "Hotel operations app for Florida hotels", con el botón para pedir el piloto y la animación de la habitación 214 lista para vender.
+2. **Tablero en vivo**: cada habitación, al mismo tiempo para todos los equipos.
+3. **Cinco herramientas en una app** y **una pantalla para cada equipo** (recepción, housekeeping, ingeniería, caja, chat).
+4. **Hecha para Florida**: los detalles que los sistemas nacionales no traen, y la demo de voz en español.
+5. **Video**: StayDesk en menos de 2 minutos.
+6. **Piloto y precio**: un mes gratis, después $6 por habitación al mes, sin costo de instalación.
+7. **En desarrollo**: las dos funciones que vienen (botón de ayuda y órdenes por voz).
+8. **Preguntas** y **llamado a la acción** con el correo info@staydeskhotel.com.
 
 El botón **ES / EN** cambia todo el texto de la página; el diccionario en español está dentro de `index.html`.
 
